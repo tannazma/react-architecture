@@ -1,4 +1,5 @@
 import React, { useState, ReactNode } from "react";
+import CustomButton from "./CustomButton";
 
 interface ToggleContentProps {
   title: string;
@@ -18,6 +19,11 @@ const ToggleContent = ({ title, children }: ToggleContentProps) => {
         {isShown ? "Hide" : "Show"} {title}
       </button>
       {isShown && <div>{children}</div>}
+      <div>
+        <CustomButton variant="primary">Primary Button</CustomButton>
+        <CustomButton variant="important">Important Button</CustomButton>
+        <CustomButton variant="secondary">Secondary Button</CustomButton>
+      </div>
     </div>
   );
 };
