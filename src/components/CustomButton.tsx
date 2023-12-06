@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 type CustomButtonVariant = "primary" | "secondary" | "important";
 
 interface CustomButtonProps {
@@ -7,6 +9,8 @@ interface CustomButtonProps {
 }
 
 const CustomButton = ({ variant, children, onClick }: CustomButtonProps) => {
+  const [status, setStatus] = useState<boolean>(false);
+
   // remove if sattements and replaced with Recod utility type
   const buttonStyles: Record<CustomButtonVariant, string> = {
     primary: "primary",
@@ -17,9 +21,15 @@ const CustomButton = ({ variant, children, onClick }: CustomButtonProps) => {
   //   if (props.variant === "primary") {
   //   return <button className="btn secondary">{props.children}</button>;
   return (
-    <button className={`btn ${buttonStyles[variant]}`} onClick={onClick}>
-      {children}
-    </button>
+    <div>
+      <p>{status ? "☀️" : "🌑"}</p>
+      <button
+        className={`btn ${buttonStyles[variant]}`}
+        onClick={() => setStatus(!status)}
+      >
+        {children}
+      </button>
+    </div>
   );
   //   }
 
