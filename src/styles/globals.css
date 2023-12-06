@@ -86,7 +86,7 @@ h6 {
   cursor: pointer;
 }
 
-.primary {
+/* .primary {
   background-color: #0e172c;
   color: #fffffe;
   border: 2px solid hsl(222 52% 31% / 1);
@@ -96,7 +96,7 @@ h6 {
   background-color: #a786df;
   color: #fffffe;
   border: 2px solid hsl(262 58% 62% / 1);
-}
+} */
 
 .navigation-container {
   display: flex;
@@ -116,4 +116,30 @@ h6 {
 }
 form label {
   display: block;
+}
+.btn {
+  font-weight: 800;
+  padding: 10px;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: solid;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: white;
+  border-color: black;
+  color: black;
+}
+
+.secondary {
+  background-color: black;
+  border-color: black;
+  color: white;
+}
+
+.important {
+  background-color: red;
+  border-color: red;
+  color: white;
 }
