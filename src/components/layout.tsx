@@ -5,7 +5,15 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const Footer = () => {
+  return (
+    <div>
+      <p>Made with ❤ at Mind Mingle!</p>
+    </div>
+  );
+};
+
+const NavBar = () => {
   return (
     <div>
       <nav>
@@ -21,10 +29,15 @@ const Layout = ({ children }: LayoutProps) => {
           </li>
         </ul>
       </nav>
+    </div>
+  );
+};
+const Layout = ({ children }: LayoutProps) => {
+  return (
+    <div>
+      <NavBar />
       <main>{children}</main>
-      <footer>
-        <p>2023 Copyright by law in Utrecht</p>
-      </footer>
+      <Footer />
     </div>
   );
 };
