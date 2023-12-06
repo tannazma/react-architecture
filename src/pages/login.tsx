@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { useRouter } from "next/router";
+import BetterButton from "../components/BetterButton";
 
 const Login = () => {
   const router = useRouter();
@@ -14,7 +15,9 @@ const Login = () => {
   return (
     <Layout>
       <h1>Login</h1>
-      <button onClick={handleLogin}>Click here to login</button>
+      <BetterButton onClick={handleLogin} variant="primary">
+        Login
+      </BetterButton>
     </Layout>
   );
 };
