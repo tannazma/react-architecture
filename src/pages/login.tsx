@@ -1,11 +1,20 @@
 import Layout from "@/components/Layout";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-interface FormValues {
-  username: string;
-  password: string;
-}
+// interface FormValues {
+//   username: string;
+//   password: string;
+// }
+
+const formValuesSchema = z.object({
+  username: z.string().min(1),
+  password: z.string().min(5),
+});
+
+type LoginFormInputs = z.infer<typeof formValuesSchema>;
 
 const Login = () => {
   const router = useRouter();
@@ -14,9 +23,11 @@ const Login = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormValues>();
+  } = useForm<LoginFormInputs>({
+    resolver: zodResolver(formValuesSchema),
+  });
 
-  const handleLogin = (data: FormValues) => {
+  const handleLogin = (data: LoginFormInputs) => {
     console.log(data);
     // Log the user in
     const token = "fake-token"; // This would normally come from the server
@@ -32,7 +43,9 @@ const Login = () => {
           <label>
             Username
             <input id="username" {...register("username")}></input>
-            {errors.username && errors.username?.message}
+            <span className="error-msg">
+              {errors.username && errors.username?.message}
+            </span>
           </label>
           <label>
             Password
@@ -41,10 +54,14 @@ const Login = () => {
               type="password"
               {...register("password", { required: true })}
             ></input>
-            {errors.password && errors.password?.message}
+            <span className="error-msg">
+              {errors.password && errors.password?.message}
+            </span>
           </label>
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" className="secondary">
+          Login
+        </button>
       </form>
     </Layout>
   );

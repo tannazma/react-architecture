@@ -109,3 +109,11 @@ h6 {
   list-style: none;
   gap: 20px;
 }
+.error-msg {
+  color: white;
+  background-color: red;
+  padding: 2px;
+}
+form label {
+  display: block;
+}
