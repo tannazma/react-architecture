@@ -43,9 +43,9 @@ const Login = () => {
           <label>
             Username
             <input id="username" {...register("username")}></input>
-            <span className="error-msg">
-              {errors.username && errors.username?.message}
-            </span>
+            {errors.username && (
+              <span className="error-msg">{errors.username?.message}</span>
+            )}
           </label>
           <label>
             Password
@@ -54,9 +54,9 @@ const Login = () => {
               type="password"
               {...register("password", { required: true })}
             ></input>
-            <span className="error-msg">
-              {errors.password && errors.password?.message}
-            </span>
+            {errors.password && (
+              <span className="error-msg">{errors.password?.message}</span>
+            )}
           </label>
         </div>
         <button type="submit" className="secondary">
