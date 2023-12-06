@@ -1,15 +1,11 @@
-const Article = () => {
+import Article from "@/components/Article";
+import Layout from "@/components/Layout";
+
+const Home = () => {
   return (
-    <>
-      <div>
-        <h1 id="title">Today, nothing.</h1>
-        <div id="content">
-          <p>Today, nothing of importance has happened</p>
-          <img src="/image-of-nothing.png" alt="An image of nothing" />
-        </div>
-        <p id="attribution">Written by Mary</p>
-      </div>
-    </>
+    <Layout>
+      <Article title="Today, nothing." author="Mary" />
+    </Layout>
   );
 };
-export default Article;
+export default Home;
