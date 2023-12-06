@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import ToggleContent from "@/components/ToggleContent";
 
 // interface FormValues {
 //   username: string;
@@ -63,6 +64,9 @@ const Login = () => {
           Login
         </button>
       </form>
+      <ToggleContent title="Spoiler Alert">
+        <p>Here is the spoil</p>
+      </ToggleContent>
     </Layout>
   );
 };
