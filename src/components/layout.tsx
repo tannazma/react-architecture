@@ -1,6 +1,11 @@
 import Link from "next/link";
+import { ReactNode } from "react";
 
-const Layout = () => {
+interface LayoutProps {
+  children: ReactNode;
+}
+
+const Layout = ({ children }: LayoutProps) => {
   return (
     <div>
       <nav>
@@ -16,11 +21,10 @@ const Layout = () => {
           </li>
         </ul>
       </nav>
-      <main>
-        <footer>
-          <p>2023 Copyright by law in Utrecht</p>
-        </footer>
-      </main>
+      <main>{children}</main>
+      <footer>
+        <p>2023 Copyright by law in Utrecht</p>
+      </footer>
     </div>
   );
 };
