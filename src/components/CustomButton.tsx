@@ -3,9 +3,10 @@ type CustomButtonVariant = "primary" | "secondary" | "important";
 interface CustomButtonProps {
   variant: CustomButtonVariant;
   children: string;
+  onClick: () => void;
 }
 
-const CustomButton = ({ variant, children }: CustomButtonProps) => {
+const CustomButton = ({ variant, children, onClick }: CustomButtonProps) => {
   // remove if sattements and replaced with Recod utility type
   const buttonStyles: Record<CustomButtonVariant, string> = {
     primary: "primary",
@@ -15,7 +16,11 @@ const CustomButton = ({ variant, children }: CustomButtonProps) => {
 
   //   if (props.variant === "primary") {
   //   return <button className="btn secondary">{props.children}</button>;
-  return <button className={`btn ${buttonStyles[variant]}`}>{children}</button>;
+  return (
+    <button className={`btn ${buttonStyles[variant]}`} onClick={onClick}>
+      {children}
+    </button>
+  );
   //   }
 
   //   if (props.variant === "secondary") {
