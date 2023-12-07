@@ -169,3 +169,29 @@ form label {
 .customImg.square {
   border-radius: 20px;
 }
+
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark {
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+}
+
+.navbar.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.navbar.dark {
+  background-color: rgb(199, 16, 16);
+  color: #ffffff;
+}
+
+button {
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
