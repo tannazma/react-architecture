@@ -1,23 +1,11 @@
 import Layout from "@/components/Layout";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import ToggleContent from "@/components/ToggleContent";
 import Alert from "@/components/Alert";
 import ImageComponent from "@/components/ImageComponent";
-
-// interface FormValues {
-//   username: string;
-//   password: string;
-// }
-
-const formValuesSchema = z.object({
-  username: z.string().min(1),
-  password: z.string().min(5),
-});
-
-type LoginFormInputs = z.infer<typeof formValuesSchema>;
+import { LoginFormInputs, formValuesSchema } from "./LoginFormInputs";
 
 const Login = () => {
   const router = useRouter();
@@ -37,6 +25,18 @@ const Login = () => {
     localStorage.setItem("token", token);
     router.push("/protected");
   };
+
+  // validation.js
+  // function validateForm(username: string, password: string) {
+  //   if (username.length < 3) {
+  //     throw new Error("Username must be at least 3 characters long.");
+  //   }
+  //   if (password.length < 8) {
+  //     throw new Error("Password must be at least 8 characters long.");
+  //   }
+  //   return true;
+  // }
+  // module.exports = validateForm;
 
   return (
     <Layout>
