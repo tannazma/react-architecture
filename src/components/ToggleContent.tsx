@@ -20,9 +20,15 @@ const ToggleContent = ({ title, children }: ToggleContentProps) => {
       </button>
       {isShown && <div>{children}</div>}
       <div>
-        <CustomButton variant="primary">Primary Button</CustomButton>
-        <CustomButton variant="important">Important Button</CustomButton>
-        <CustomButton variant="secondary">Secondary Button</CustomButton>
+        <CustomButton onClick={toggleContent} variant="primary">
+          Primary Button
+        </CustomButton>
+        <CustomButton onClick={toggleContent} variant="important">
+          Important Button
+        </CustomButton>
+        <CustomButton onClick={toggleContent} variant="secondary">
+          Secondary Button
+        </CustomButton>
       </div>
     </div>
   );
