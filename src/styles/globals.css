@@ -143,3 +143,19 @@ form label {
   border-color: red;
   color: white;
 }
+
+.alert {
+  padding: 20px;
+}
+.alert span {
+    margin-right: 10px;
+}
+.alert.Success {
+  background-color: green;
+}
+.alert.Error {
+  background-color: lightcoral;
+}
+.alert.Warning {
+  background-color: orange;
+}
