@@ -5,6 +5,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import ToggleContent from "@/components/ToggleContent";
 import Alert from "@/components/Alert";
+import ImageComponent from "@/components/ImageComponent";
 
 // interface FormValues {
 //   username: string;
@@ -68,9 +69,17 @@ const Login = () => {
       <ToggleContent title="Spoiler Alert">
         <p>Here is the spoil</p>
       </ToggleContent>
-      <Alert variant="Success" >file Uploaded successfully</Alert>
-      <Alert variant="Warning" >file warning</Alert>
-      <Alert variant="Error" >file not Uploaded </Alert>
+      <Alert variant="Success">file Uploaded successfully</Alert>
+      <Alert variant="Warning">file warning</Alert>
+      <Alert variant="Error">file not Uploaded </Alert>
+      <ImageComponent
+        variant="circle"
+        href="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      />
+      <ImageComponent
+        variant="square"
+        href="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      />
     </Layout>
   );
 };
