@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import ToggleContent from "@/components/ToggleContent";
+import Alert from "@/components/Alert";
 
 // interface FormValues {
 //   username: string;
@@ -67,6 +68,9 @@ const Login = () => {
       <ToggleContent title="Spoiler Alert">
         <p>Here is the spoil</p>
       </ToggleContent>
+      <Alert variant="Success" >file Uploaded successfully</Alert>
+      <Alert variant="Warning" >file warning</Alert>
+      <Alert variant="Error" >file not Uploaded </Alert>
     </Layout>
   );
 };
